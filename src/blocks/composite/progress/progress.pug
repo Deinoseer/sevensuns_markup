@@ -1,0 +1,9 @@
+mixin progress(item)
+  .progress(class=attributes.class).js-widget(onclick="return {'progress': {}}")
+    .progress__chart
+      .js-progress(data-max=item.max, data-text=item.text, data-value=item.value, data-color=item.color, data-gradient=item.gradient)
+    .progress__count
+      .progress__count-from=item.value
+      .progress__count-to / #{' '}
+        =item.max
+

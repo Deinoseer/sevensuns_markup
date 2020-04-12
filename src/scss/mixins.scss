@@ -1,0 +1,30 @@
+@mixin desktop {
+  @media #{$desktopLarge} {
+    @content;
+  }
+}
+
+@mixin wrapperStyle() {
+  padding: 0 96px 0 24px;
+}
+
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder {
+    opacity: 1;
+    color: $color;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  &:-moz-placeholder {
+    opacity: 1;
+    color: $color;
+  }
+}

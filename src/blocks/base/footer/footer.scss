@@ -1,0 +1,29 @@
+.footer {
+  background-color: $black;
+  color: $white;
+  position: relative;
+  z-index: 20;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;
+    margin: auto;
+    height: 118px;
+    padding: 0 15px;
+  }
+
+  &__copy {
+    font-size: 16px;
+    margin-left: 158px;
+  }
+
+  &__partner {
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: 700;
+    color: $white;
+    text-decoration: none;
+  }
+}

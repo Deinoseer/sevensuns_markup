@@ -1,0 +1,27 @@
+.button-group {
+  display: flex;
+
+  & + & {
+    margin-top: 8px;
+  }
+
+  .button + .button {
+    margin-left: 10px;
+  }
+
+  &_justify {
+    justify-content: space-between;
+  }
+
+  &_center {
+    justify-content: center;
+
+    .button + .button {
+      margin-left: 16px;
+    }
+  }
+
+  &_end {
+    justify-content: flex-end;
+  }
+}

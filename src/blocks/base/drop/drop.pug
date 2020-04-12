@@ -1,0 +1,28 @@
+mixin drop-menu(icon, iconSize, dropMenu, text, modalHref)
+  .drop.drop_hover.drop_center(class=attributes.class, class=dropMenu?'drop_anim_bottom':'drop_anim_top')
+    .drop__toggle
+      if dropMenu
+        +icon(icon, iconSize).drop__toggle-icon
+      else
+        a(href="#", data-href=modalHref).js-modal-open
+          +icon(icon, iconSize).drop__toggle-icon
+    if dropMenu
+      .drop__tooltip.tooltip
+        .tooltip__corner.drop__corner
+        +action-menu(actionMenu)
+    if text
+      .drop__tooltip.tooltip.tooltip_top
+        .tooltip__corner.drop__corner
+        .tooltip__text.text.text_xs-small=text
+
+mixin drop-menu-action(icon, iconSize, dropMenu, button)
+  .drop.drop_hover(class=attributes.class)
+    .drop__toggle
+      if icon
+        +icon(icon, iconSize).drop__toggle-icon
+      if button
+        +button(button)
+    .drop__tooltip.tooltip
+      .tooltip__corner.drop__corner
+      +action-menu(dropMenu)
+

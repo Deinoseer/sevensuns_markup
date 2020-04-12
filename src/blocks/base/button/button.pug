@@ -1,0 +1,6 @@
+mixin button(text, iconName, iconOptions, disabled, type, dataHref)
+  button.button(type=type, class=attributes.class, disabled=disabled, data-href=dataHref)
+    if iconName
+      +icon(iconName, iconOptions).button__icon
+    if text
+      span.button__text= text

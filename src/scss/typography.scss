@@ -1,0 +1,218 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: $fontLora;
+  color: $black;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+h1 {
+  font-size: 44px;
+  line-height: 44px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 27px;
+  line-height: 27px;
+}
+
+h4 {
+  font-size: 22px;
+  line-height: 22px;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 18px;
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+p {
+  margin: 0;
+
+  + p {
+    margin-top: 20px;
+  }
+
+  + h1,
+  + h2,
+  + h3,
+  + h4,
+  + ol,
+  + ul {
+    margin-top: 20px;
+  }
+}
+
+.title {
+  font-family: $fontLora;
+  color: $black;
+  font-weight: bold;
+  margin: 0 0 14px;
+
+  &_h1 {
+    font-size: 44px;
+    line-height: 44px;
+  }
+
+  &_h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  &_h3 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &_h4 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &_normal {
+    font-weight: normal;
+  }
+
+  &_center {
+    text-align: center;
+  }
+}
+
+.link {
+  text-decoration: underline;
+  color: $white;
+  fill: $white;
+  transition: color $timing;
+
+  &:hover {
+    color: $baseColor;
+    fill: $baseColor;
+  }
+
+  &_gray {
+    color: $grayDark;
+    fill: $grayDark;
+  }
+
+  &_md {
+    font-size: 16px;
+  }
+}
+
+.editable-content {
+  a {
+    text-decoration: none;
+    color: $green;
+    transition: color $timing;
+
+    &:hover {
+      color: $baseColor;
+      border: 0;
+    }
+  }
+
+  ul,
+  ol {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    ul,
+    ol {
+      padding: 0;
+      margin-top: 8px;
+    }
+
+    > ol,
+    > ul {
+      padding-left: 20px;
+    }
+  }
+
+  ul {
+    > li {
+      padding-left: 20px;
+      position: relative;
+
+      &::before {
+        content: '';
+        top: 7px;
+        left: 0;
+        position: absolute;
+        background-color: $baseColor;
+        width: 4px;
+        height: 4px;
+        border: 1px solid $baseColor;
+        border-radius: 50%;
+      }
+    }
+
+    > ul {
+      > li {
+        &::before {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  ol {
+    counter-reset: point;
+
+    > li {
+      padding-left: 20px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        font-size: 16px;
+        font-weight: 600;
+        content: counter(point) ".";
+        counter-increment: point 1;
+      }
+    }
+  }
+
+  .blog-post-quote,
+  blockquote {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxOXB4IiBoZWlnaHQ9IjE4cHgiIHZpZXdCb3g9IjAgMCAxOSAxOCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBmaWxsPSIjNEU0QzRCIiBmaWxsLXJ1bGU9Im5vbnplcm8iPiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMC42ODc1LDcuMTk5NCBMMTAuNjg3NSwxLjE5OTQgQzEwLjY4NzUsMC41Mzc2IDExLjIxODkwNjIsMCAxMS44NzUsMCBMMTcuODEyNSwwIEMxOC40Njg1OTM4LDAgMTksMC41Mzc2IDE5LDEuMTk5NCBMMTksNy4xOTk0IEwxOSw5LjU5OTQgQzE5LDEzLjQwNTggMTYuNzM2NjI1LDE2Ljk4NjYgMTMuMDYyNSwxNy45OTk0IEwxMy4wNjI1LDE1LjMzNjYgQzE1LjMyNTg3NSwxNC41MTE2IDE2LjYyNSwxMi4wNTg4IDE2LjYyNSw5LjU5OTQgTDE2LjYyNSw4LjQgTDExLjg3NSw4LjQgQzExLjIxODkwNjIsOC40IDEwLjY4NzUsNy44NjI0IDEwLjY4NzUsNy4xOTk0IFogTTEuMTg3NSw4LjQgTDUuOTM3NSw4LjQgTDUuOTM3NSw5LjU5OTQgQzUuOTM3NSwxMi4wNTk0IDQuNzUsMTQuNTEyMiAyLjM3NSwxNS4zMzY2IEwyLjM3NSwxNy45OTk0IEM1LjkzNzUsMTYuOTg2NiA4LjMxMjUsMTMuNDA1OCA4LjMxMjUsOS41OTk0IEw4LjMxMjUsNy4xOTk0IEw4LjMxMjUsMS4xOTk0IEM4LjMxMjUsMC41Mzc2IDcuNzgxNjg3NSwwIDcuMTI1LDAgTDEuMTg3NSwwIEMwLjUzMTQwNjI1LDAgMCwwLjUzNzYgMCwxLjE5OTQgTDAsNy4xOTk0IEMwLDcuODYyNCAwLjUzMTQwNjI1LDguNCAxLjE4NzUsOC40IFoiPjwvcGF0aD4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==);
+    background-position: 32px 0;
+    background-repeat: no-repeat;
+    padding: 4px 0 0 62px;
+    font-style: italic;
+    margin: 0;
+  }
+
+  p,
+  ol,
+  ul,
+  blockquote,
+  .blog-post-quote {
+    + p,
+    + ol,
+    + ul,
+    + blockquote,
+    + .blog-post-quote {
+      margin-top: 20px;
+    }
+  }
+}

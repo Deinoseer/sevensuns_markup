@@ -1,0 +1,568 @@
+extends ../layouts/main
+
+block vars
+  - var title = 'Главная';
+  - var page = 'home';
+  - var banner = true;
+
+block content
+  //graph section
+  section.section.section_graph
+    .section__bird
+      +icon('icon-bird', {width: 48, height: 70})
+    .section__wrapper
+      .section__row
+        .section__item
+          +goal({
+            background: 'img/backgrounds/protest.png',
+            title: 'Решаем \n проблемы',
+            text: 'Столкнулись с проблемой? Считаете, что необходимо срочно решить какой-то вопрос? оставьте жалобу и следите за ходом решения проблемы.',
+            button: 'Добавить жалобу',
+            buttonClass: 'button_red',
+            progress: {
+              value: '95',
+              max: '112',
+              text: 'жалоб решено',
+              color: '#e34257',
+              gradient: false
+            }
+          })
+        .section__item
+          +goal({
+            background: 'img/backgrounds/call.png',
+            title: 'Улучшаем наш дом',
+            text: 'Знаете, как улучшить что-то в нашем доме или дворе? Оставьте предожение. Мы вместе реализуем задуманное.',
+            button: 'Оставить предложение',
+            buttonClass: 'button_green',
+            progress: {
+              value: '14',
+              max: '18',
+              text: 'предложений реализовано',
+              color: '#00b986',
+              gradient: false
+            }
+          })
+      .section__row
+        .section__item
+          +goal({
+            background: 'img/backgrounds/discuss.png',
+            title: 'Принимаем решения вместе',
+            text: 'Мы сообща принимаем решения, организовывайте голосования и отдавайте свой голос за решения по важным вопросам.',
+            button: 'Создать голосование',
+            buttonClass: 'button_blue',
+            progress: {
+              value: '32',
+              max: '33',
+              text: 'голосований проведено',
+              color: '#2aa7df',
+              gradient: false
+            }
+          })
+        .section__item
+          +goal({
+            background: 'img/backgrounds/hammer.png',
+            title: 'Действуем!',
+            text: 'От слов переходим к делам. Можете сделать что-то, чтобы улучшить жизнь свою и окружающих? Действуйте!',
+            button: 'Предложить действие',
+            buttonClass: 'button_purple',
+            progress: {
+              value: '12',
+              max: '13',
+              text: 'действий выполнено',
+              color: '#a318c9',
+              gradient: true
+            }
+          })
+
+  section.section.section_team
+    .section__head
+      .section__title.title.title_h1 Присоединяйся к нашей команде!
+      .section__subtitle С нами уже 1445 жителей
+    .section__content.js-widget(onclick="return {'swiperSlider': {}}")
+      .section__slider
+        .section__list.swiper-container.js-slider(data-slides=3, data-space=0 , data-center='true', data-first-slide=1, data-team='true')
+          .swiper-wrapper
+            +team-item({
+              image: 'img/user/mrg.jpg',
+              title: 'Маргарита С.',
+              text: 'Вкрутила лампочки во всём подъезде и тем самым исправил жалобу...',
+              button: 'Узнать подробнее'
+            }).swiper-slide
+            +team-item({
+              image: 'img/user/mrg.jpg',
+              title: 'Маргарита С.',
+              text: 'Вкрутила лампочки во всём подъезде и тем самым исправил жалобу...',
+              button: 'Узнать подробнее'
+            }).swiper-slide
+            +team-item({
+              image: 'img/user/mrg.jpg',
+              title: 'Маргарита С.',
+              text: 'Вкрутила лампочки во всём подъезде и тем самым исправил жалобу...',
+              button: 'Узнать подробнее'
+            }).swiper-slide
+            +team-item({
+              image: 'img/user/mrg.jpg',
+              title: 'Маргарита С.',
+              text: 'Вкрутила лампочки во всём подъезде и тем самым исправил жалобу...',
+              button: 'Узнать подробнее'
+            }).swiper-slide
+            +team-item({
+              image: 'img/user/mrg.jpg',
+              title: 'Маргарита С.',
+              text: 'Вкрутила лампочки во всём подъезде и тем самым исправил жалобу...',
+              button: 'Узнать подробнее'
+            }).swiper-slide
+          +slider-nav()
+
+  section.section.section_main
+    .section__wrapper
+      .section__content
+        .sphere-choose
+          .sphere-choose__head
+            .sphere-choose__title Отметьте сферы, которые <br> вам интересны
+            +button('','icon-exit', {width: 18, height: 18}).button_flat
+          .sphere-choose__content
+            .sphere-choose__list
+              .sphere-choose__col
+                +checkbox-icon('checkbox', 'Медицина', false, false, 'icon-med', {width: 36, height: 24}).checkbox_icon
+                +checkbox-icon('checkbox', 'Дети', false, false, 'icon-child', {width: 36, height: 24}).checkbox_icon
+                +checkbox-icon('checkbox', 'Образование', true, false, 'icon-edu', {
+                  width: 36,
+                  height: 24
+                }).checkbox_icon
+                +checkbox-icon('checkbox', 'Животные', true, false, 'icon-pet', {width: 36, height: 24}).checkbox_icon
+                +checkbox-icon('checkbox', 'Культура', false, false, 'icon-culture', {
+                  width: 36,
+                  height: 24
+                }).checkbox_icon
+                +checkbox-icon('checkbox', 'ЖКХ', false, false, 'icon-service', {width: 36, height: 24}).checkbox_icon
+              .sphere-choose__col
+                +checkbox-icon('checkbox', 'Экология', false, false, 'icon-eco', {width: 36, height: 24}).checkbox_icon
+                +checkbox-icon('checkbox', 'Безопасность', false, false, 'icon-guard', {
+                  width: 36,
+                  height: 24
+                }).checkbox_icon
+                +checkbox-icon('checkbox', 'Образование', false, false, 'icon-edu', {
+                  width: 36,
+                  height: 24
+                }).checkbox_icon
+                +checkbox-icon('checkbox', 'Животные', false, false, 'icon-pet', {width: 36, height: 24}).checkbox_icon
+                +checkbox-icon('checkbox', 'Культура', true, false, 'icon-culture', {
+                  width: 36,
+                  height: 24
+                }).checkbox_icon
+                +checkbox-icon('checkbox', 'ЖКХ', false, false, 'icon-service', {width: 36, height: 24}).checkbox_icon
+              .sphere-choose__col
+                +checkbox-icon('checkbox', 'Медицина', false, false, 'icon-med', {width: 36, height: 24}).checkbox_icon
+                +checkbox-icon('checkbox', 'Дети', false, false, 'icon-child', {width: 36, height: 24}).checkbox_icon
+                +checkbox-icon('checkbox', 'Образование', false, false, 'icon-edu', {
+                  width: 36,
+                  height: 24
+                }).checkbox_icon
+                +checkbox-icon('checkbox', 'Животные', false, false, 'icon-pet', {width: 36, height: 24}).checkbox_icon
+                +checkbox-icon('checkbox', 'Культура', false, false, 'icon-culture', {
+                  width: 36,
+                  height: 24
+                }).checkbox_icon
+                +checkbox-icon('checkbox', 'ЖКХ', false, false, 'icon-service', {width: 36, height: 24}).checkbox_icon
+          .sphere-choose__footer
+            .sphere-choose__text Мы будем присылать вам подборки новых событий по интересующим <br> вас сферам, чтобы вы не пропустили важные для вас обновления.
+            .sphere-choose__btn
+              +button('Сохранить').button_purple.button_md
+
+        .stream-list
+          .title.title_h1 Прямо сейчас на портале
+          .stream-list__heading
+            .stream-list__filter
+              .stream-list__filter-item
+                select.custom-select.js-custom-select(data-placeholder="Все сферы")
+                  option
+                  option(value="1") Сфера 1
+                  option(value="2") Сфера 2
+                  option(value="3") Сфера 3
+                  option(value="4") Сфера 4
+                  option(value="5") Сфера 5
+                  option(value="6") Все сферы
+              .stream-list__filter-item
+                select.custom-select.js-custom-select(data-placeholder="Все активности")
+                  option
+                  option(value="1") Активность 1
+                  option(value="2") Активность 2
+                  option(value="3") Активность 3
+                  option(value="4") Все активности
+            +button('+ Добавить').button_border-purple
+          .stream-list__content
+            .stream-list__list
+              .stream-list__item
+                 +stream-item({
+                   sphereImage: 'icon-service',
+                   sphereName: 'ЖКХ',
+                   sphereImageSize: {width: 36, height: 24},
+                   chevron: 'Жалбота в работе',
+                   chevronClass: 'chevron_border',
+                   text: 'В подъезде нужно мыть полы, а не придумывать отговорки и устраивать себе праздники каждый день! Взносы не забываете получать — будьте любезны и поработать. ',
+                   date: 'Минуту назад'
+                 })
+              .stream-list__item
+                 +stream-item({
+                   sphereImage: 'icon-service',
+                   sphereName: 'ЖКХ',
+                   sphereImageSize: {width: 36, height: 24},
+                   chevron: 'Жалбота',
+                   chevronClass: 'chevron_red',
+                   text: 'В подъезде нужно мыть полы, а не придумывать отговорки и устраивать себе праздники каждый день! Взносы не забываете получать — будьте любезны и поработать. ',
+                   date: 'Только что'
+                 })
+              .stream-list__item
+                 +stream-item({
+                    sphereImage: 'icon-pet',
+                    sphereName: 'Животные',
+                    sphereImageSize: {width: 36, height: 24},
+                    chevron: 'Предложение',
+                    chevronClass: 'chevron_green',
+                    text: 'Может повесим пакеты для уборки за собаками?',
+                    date: '40 минут назад'
+                 })
+              .stream-list__item
+                 +stream-item({
+                    sphereImage: 'icon-pet',
+                    sphereName: 'Животные',
+                    sphereImageSize: {width: 36, height: 24},
+                    chevron: 'Предложение',
+                    chevronClass: 'chevron_closed',
+                    text: 'Может повесим пакеты для уборки за собаками?',
+                    date: '40 минут назад'
+                 })
+
+      .section__aside
+        .widget.widget_user
+          .widget__top
+            .widget__user
+              +user('img/user.png','Максим Пакровский', '327')
+            .widget__list
+              .widget__list-item <span>Нерешенные жалобы</span> <strong>1 / 3</strong>
+              .widget__list-item <span>Предложения на рассмотрении</span> <strong>7 / 10</strong>
+              .widget__list-item <span>Активные голосования</span> <strong> 0 / 3</strong>
+              .widget__list-item <span>Невыполненные действия</span> <strong>2 / 5</strong>
+          .widget__bottom
+            .notify-list
+              .notify-list__head
+                .notify-list__title
+                  +icon('icon-bell', { width:24, height: 24 })
+                  span 12 уведомлений
+                .notify-list__clear
+                  +button('Очистить все').button_flat.button_clear
+              .notify-list__content
+                .notify-list__item
+                  +notify-item({
+                    title: 'Назначена дата следующего собрания собственников. Не пропустите!',
+                    date: '4 минуты назад'
+                  })
+                .notify-list__item
+                  +notify-item({
+                    title: 'В подъезде №3 установлен новый ультрафункциональный пандус для инвалидов.',
+                    date: '40 минут назад'
+                  })
+                .notify-list__item
+                  +notify-item({
+                    title: 'Построена спортивная площадка с 10 тренжерами.',
+                    date: 'Вчера'
+                  })
+                .notify-list__item
+                  +notify-item({
+                    title: 'Пора оплатить ЖКХ. Счет выстставлен в личном кабинете',
+                    date: 'Неделю назад'
+                  })
+
+        .widget.widget_events
+          .widget__top
+            .widget__title Ближайшие мероприятия
+            .widget__button
+              +button('','icon-list', { width: 22, height: 22}).button_flat.button_active
+            .widget__button.widget__button_cal
+              +button('','icon-calendar', {width: 22, height: 22}).button_flat.button_unactive
+          .widget__bottom
+            +event('12','Дек','12:30 - 14:40', 'Собрание собственников 3 подъезда')
+            +event('23','Янв','12:30 - 14:40', 'Субботник! Посадите дерево  - сделаем наш двор зеленее вместе!')
+            +event('12','Дек','12:30 - 14:40', 'Собрание собственников 3 подъезда')
+
+
+
+  section.section.section_announce
+    .section__wrapper
+      .section__head.section__head
+        .section__head-item
+          .title.title_h1 Актуальное
+        .section__head-item
+          a(href="#").link.link_md.link_gray Все объявления
+      .section__content.js-widget(onclick="return {'swiperSlider': {}}")
+        .section__list.swiper-container.js-slider(data-slides=3, data-space=28)
+          .swiper-wrapper
+            .section__item.swiper-slide
+              +announce('Срочно требуется  повар', 'Максим С.', 'В доме № 35 (3 подъезд) открылось новое кафе "Ромашка". В кафе срочно требуется повар!', 'img/actual/bg-img-1.jpg')
+            .section__item.swiper-slide
+              +announce('Срочно требуется  повар', 'Евгений А.', 'В доме № 35 (3 подъезд) открылось новое кафе "Ромашка". В кафе срочно требуется повар!', 'img/actual/bg-img-2.jpg')
+            .section__item.swiper-slide
+              +announce('Отдам котят', 'Марина У.', 'В добрые руки. Спрашивать в 35 квартире!', 'img/actual/bg-img-3.jpg')
+            .section__item.swiper-slide
+              +announce('Срочно требуется  повар', 'Максим С.', 'В доме № 35 (3 подъезд) открылось новое кафе "Ромашка". В кафе срочно требуется повар!', 'img/actual/bg-img-1.jpg')
+            .section__item.swiper-slide
+              +announce('Срочно требуется  повар', 'Евгений А.', 'В доме № 35 (3 подъезд) открылось новое кафе "Ромашка". В кафе срочно требуется повар!', 'img/actual/bg-img-2.jpg')
+            .section__item.swiper-slide
+              +announce('Отдам котят', 'Марина У.', 'В добрые руки. Спрашивать в 35 квартире!', 'img/actual/bg-img-3.jpg')
+        +slider-nav('announce')
+
+  section.section.section_news
+    .section__wrapper
+      .section__head.section__head
+        .section__head-item
+          .title.title_h1 Новости
+        .section__head-item
+          a(href="#").link.link_md.link_gray Все новости
+      .section__content
+        .section__list
+          .section__item
+            +news-item({
+              image: 'img/news/news-item.jpg',
+              title: 'Наш ЖК признали лучшим в России!',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              date: '2 июля 2019 в 18:40',
+              social: true,
+              chevron: 'Активисты'
+            })
+          .section__item
+            +news-item({
+              image: 'img/news/news-item1.png',
+              title: 'Жители ЖК "Наш" соберутся во дворе для решения возникших вопросов.',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              date: 'Сегодня в 12:15',
+              social: true,
+              chevron: 'Управа района'
+            }).news-item_inline
+          .section__item
+            +news-item({
+              image: false,
+              title: 'Наш ЖК признали лучшим в России!',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              background: '#2aa7df',
+              button: 'Читать далее'
+            }).news-item_flat
+          .section__item
+            +news-item({
+              image: 'img/news/news-item4.jpg',
+              title: 'Наш ЖК признали лучшим в России!',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              date: '2 июля 2019 в 18:40',
+              social: true,
+              chevron: 'Жители 7 дома'
+            })
+          .section__item
+            +news-item({
+              image: false,
+              title: 'Наш ЖК признали лучшим в России!',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              background: '#2175bb',
+              button: 'Читать далее'
+            }).news-item_flat
+          .section__item
+            +news-item({
+              image: 'img/news/news-item2.jpg',
+              title: 'Наш ЖК признали лучшим в России!',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              date: '2 июля 2019 в 18:40',
+              social: true,
+              chevron: 'Активисты'
+            })
+          .section__item
+            +news-item({
+              image: 'img/news/news-item3.jpg',
+              title: 'Наш ЖК признали лучшим в России!',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              date: '2 июля 2019 в 18:40',
+              social: true,
+              chevron: 'Администрация'
+            })
+
+  section.section.section_sphere
+    .section__wrapper
+      .section__head
+        .section__title.title.title_h1 Сферы ждут ответственного
+      .section__content.js-widget(onclick="return {'swiperSlider': {}}")
+        .section__list.swiper-container.js-slider(data-slides=4)
+          .swiper-wrapper
+            .section__item.swiper-slide
+              +widget({
+                icon: 'icon-eco',
+                iconSize: {width: 36, height: 24},
+                sphere: 'Экология',
+                title: 'Требуется садовник для палисадника возле 3 подъезда 5 корпуса',
+                price: '15 000 руб/мес',
+                buttonText: 'Стать отвественным'
+              }).widget_sphere
+            .section__item.swiper-slide
+              +widget({
+                icon: 'icon-med',
+                iconSize: {width: 36, height: 24},
+                sphere: 'Медицина',
+                title: 'Медпункт ищет добровольцев для расклейки плакатов',
+                price: 'Без оплаты',
+                buttonText: 'Стать отвественным'
+              }).widget_sphere
+            .section__item.swiper-slide
+              +widget({
+                icon: 'icon-eco',
+                iconSize: {width: 36, height: 24},
+                sphere: 'Экология',
+                title: 'Требуется садовник для палисадника возле 3 подъезда 5 корпуса',
+                price: '15 000 руб/мес',
+                buttonText: 'Стать отвественным'
+              }).widget_sphere
+            .section__item.swiper-slide
+              +widget({
+                icon: 'icon-med',
+                iconSize: {width: 36, height: 24},
+                sphere: 'Медицина',
+                title: 'Медпункт ищет добровольцев для расклейки плакатов',
+                price: '30 000 руб/мес',
+                buttonText: 'Стать отвественным'
+              }).widget_sphere
+            .section__item.swiper-slide
+              +widget({
+                icon: 'icon-eco',
+                iconSize: {width: 36, height: 24},
+                sphere: 'Экология',
+                title: 'Требуется садовник для палисадника возле 3 подъезда 5 корпуса',
+                price: '15 000 руб/мес',
+                buttonText: 'Стать отвественным'
+              }).widget_sphere
+            .section__item.swiper-slide
+              +widget({
+                icon: 'icon-med',
+                iconSize: {width: 36, height: 24},
+                sphere: 'Медицина',
+                title: 'Медпункт ищет добровольцев для расклейки плакатов',
+                price: 'Без оплаты',
+                buttonText: 'Стать отвественным'
+              }).widget_sphere
+            .section__item.swiper-slide
+              +widget({
+                icon: 'icon-eco',
+                iconSize: {width: 36, height: 24},
+                sphere: 'Экология',
+                title: 'Требуется садовник для палисадника возле 3 подъезда 5 корпуса',
+                price: '15 000 руб/мес',
+                buttonText: 'Стать отвественным'
+              }).widget_sphere
+            .section__item.swiper-slide
+              +widget({
+                icon: 'icon-med',
+                iconSize: {width: 36, height: 24},
+                sphere: 'Медицина',
+                title: 'Медпункт ищет добровольцев для расклейки плакатов',
+                price: 'Без оплаты',
+                buttonText: 'Стать отвественным'
+              }).widget_sphere
+        +slider-nav()
+        .section__more
+          a(href='#').link.link_white Посмотреть все
+
+  section.section.section_service
+    .section__wrapper
+      .section__head.section__head
+        .section__head-item
+          .title.title_h1 Популярные услуги
+        .section__head-item
+          a(href="#").link.link_md.link_gray Посмотреть все
+      .section__content.js-widget(onclick="return {'swiperSlider': {}}")
+        .section__list.swiper-container.js-slider
+          .swiper-wrapper
+            .section__item.swiper-slide
+              +widget({
+                title: 'Ремонт холодильников',
+                text: 'Отремонтирую любой холодильник за 30 минут, звоните!',
+                userImage: 'img/user/f1.png',
+                userName: 'Виктор Н.',
+                userRating: '327'
+              }).widget_service
+            .section__item.swiper-slide
+              +widget({
+                title: 'Покупка продуктов',
+                text: 'Куплю и доставлю! Присылайте список смс-кой.',
+                userImage: 'img/user/f2.png',
+                userName: 'Михаил В.',
+                userRating: '103'
+              }).widget_service
+            .section__item.swiper-slide
+              +widget({
+                title: 'Погуляю с собакой',
+                text: 'Отремонтирую любую собаку за 30 минут, звоните!',
+                userImage: 'img/user/f3.png',
+                userName: 'Семен У.',
+                userRating: '210'
+              }).widget_service
+            .section__item.swiper-slide
+              +widget({
+                title: 'Ремонт холодильников',
+                text: 'Отремонтирую любой холодильник за 30 минут, звоните!',
+                userImage: 'img/user/f1.png',
+                userName: 'Виктор Н.',
+                userRating: '327'
+              }).widget_service
+            .section__item.swiper-slide
+              +widget({
+                title: 'Покупка продуктов',
+                text: 'Куплю и доставлю! Присылайте список смс-кой.',
+                userImage: 'img/user/f2.png',
+                userName: 'Михаил В.',
+                userRating: '103'
+              }).widget_service
+            .section__item.swiper-slide
+              +widget({
+                title: 'Погуляю с собакой',
+                text: 'Отремонтирую любую собаку за 30 минут, звоните!',
+                userImage: 'img/user/f3.png',
+                userName: 'Семен У.',
+                userRating: '210'
+              }).widget_service
+        +slider-nav('flat')
+
+  section.section.section_activity
+    .section__wrapper
+      .section__head.section__head
+        .section__head-item
+          .title.title_h1 Самые активные жители
+      .section__content
+        .section__list
+          +user-made({
+            image: 'img/user/face.png',
+            title: 'Лариса В.',
+            rating: '327'
+          })
+          +user-made({
+            image: 'img/user/face3.png',
+            title: 'Саша В.',
+            rating: '270'
+          })
+          +user-made({
+            image: 'img/user/face1.png',
+            title: 'Матвей Ф.',
+            rating: '103'
+          })
+          +user-made({
+            image: 'img/user/face4.png',
+            title: 'Абориген К.',
+            rating: '777'
+          })
+          +user-made({
+            image: 'img/user/face2.png',
+            title: 'Роман И.',
+            rating: '767'
+          })
+          +user-made({
+            image: 'img/user/face5.png',
+            title: 'Евгений П.',
+            rating: '514'
+          })
+
+
+

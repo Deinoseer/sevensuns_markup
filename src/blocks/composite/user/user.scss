@@ -1,0 +1,83 @@
+.user {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &__image {
+    margin-right: 28px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: $black;
+  }
+
+  &__text {
+    font-size: 18px;
+    color: $grayDark;
+    width: 100%;
+
+    + button {
+      margin-top: 14px;
+    }
+  }
+
+  &_sm & {
+    &__image {
+      width: 48px;
+      height: 48px;
+      margin-right: 20px;
+    }
+
+    &__name {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &_lg {
+    align-items: flex-start;
+  }
+
+  &_lg & {
+    &__heading {
+      margin-bottom: 6px;
+    }
+
+    &__text {
+      line-height: 20px;
+
+      .button {
+        margin-top: 15px;
+      }
+    }
+
+    &__image {
+      width: 150px;
+      height: 150px;
+      margin-right: 26px;
+    }
+  }
+}

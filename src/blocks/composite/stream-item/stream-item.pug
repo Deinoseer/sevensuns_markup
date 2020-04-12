@@ -1,0 +1,14 @@
+mixin stream-item(item)
+  .stream-item(class=attributes.class)
+    .stream-item__head
+      .stream-item__head-item
+        +icon-title(item.sphereName, item.sphereImage, item.sphereImageSize)
+      .stream-item__head-item
+        +chevron(item.chevron)(class='' + item.chevronClass + '')
+      .service-item__head-item.stream-item__head-item_end
+        .stream-item__date=item.date
+    .stream-item__body
+      .stream-item__content=item.text
+      .stream-item__aside
+        .stream-item__social
+          +social-bar('41', '2', '13')

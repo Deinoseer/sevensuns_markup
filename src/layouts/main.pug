@@ -1,0 +1,54 @@
+include ../blocks/base/head/head
+include ../blocks/base/footer/footer
+include ../blocks/base/header/header
+include ../blocks/base/button/button
+include ../blocks/base/checkbox/checkbox
+include ../blocks/base/icon/icon
+include ../blocks/base/input/input
+include ../blocks/base/radio/radio
+include ../blocks/base/menu/menu
+include ../blocks/base/rate/rate
+include ../blocks/base/chevron/chevron
+include ../blocks/base/drop/drop
+include ../blocks/base/action-menu/action-menu
+include ../blocks/base/widget/widget
+include ../blocks/composite/progress/progress
+include ../blocks/composite/goal/goal
+include ../blocks/composite/user-bar/user-bar
+include ../blocks/composite/user/user
+include ../blocks/composite/user-made/user-made
+include ../blocks/composite/social-bar/social-bar
+include ../blocks/composite/icon-title/icon-title
+include ../blocks/composite/event/event
+include ../blocks/composite/announce/announce
+include ../blocks/composite/news-item/news-item
+include ../blocks/composite/sphere-item/sphere-item
+include ../blocks/composite/service-item/service-item
+include ../blocks/composite/team-item/team-item
+include ../blocks/composite/notify-item/notify-item
+include ../blocks/composite/stream-item/stream-item
+include ../blocks/composite/slider-nav/slider-nav
+
+block vars
+
+doctype html
+
+html(lang="ru")
+  +head()
+
+  // page
+  body.page.load(onclick="return {'page': {}}").js-widget
+    // svg icon sprite
+    div(style="display: none;")
+      include ../common/sprite.svg
+
+    // header
+    +header.page__header
+
+    // main
+    main.page__wrapper
+      block content
+
+    //footer
+    +footer()
+

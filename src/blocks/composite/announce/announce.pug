@@ -1,0 +1,15 @@
+mixin announce(title, author, text, image)
+  .announce(class=attributes.class)
+    .announce__overlay
+      if image
+        .announce__image(style='background-image: url("' + image + '")')
+      .announce__wrapper
+        .announce__title=title
+        .announce__content
+          .announce__author=author
+          .announce__text=text
+        .announce__footer
+          .announce__category
+            +icon-title('ЖКХ', 'icon-service', {width: 36, height: 24}).icon-title_white
+          a.announce__more(href="#") Подробнее
+            +icon('icon-more-arrow',{width: 24, height: 19})

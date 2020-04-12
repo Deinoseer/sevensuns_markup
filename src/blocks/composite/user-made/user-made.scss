@@ -1,0 +1,52 @@
+.user-made {
+  width: 50%;
+  padding-right: 30px;
+  margin-bottom: 24px;
+
+  &__image {
+    margin-right: 28px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__heading {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__name {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: $black;
+  }
+
+  &__rating {
+    margin-left: 5px;
+  }
+
+  &__activity {
+    margin-top: 14px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    &-date {
+      color: $grayLight;
+      margin-right: 4px;
+    }
+  }
+}

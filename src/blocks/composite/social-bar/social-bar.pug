@@ -1,0 +1,15 @@
+mixin social-bar(likes, shares, comments)
+  .social-bar(class=attributes.class)
+    .social-bar__item
+      .social-bar__icon
+        +icon('icon-like', {width: 16, height: 16})
+      .social-bar__count=likes
+    .social-bar__item
+      .social-bar__icon
+        +icon('icon-like', {width: 16, height: 16}).social-bar__icon-dislike
+      .social-bar__count=shares
+    .social-bar__item
+      .social-bar__icon
+        +icon('icon-comment', {width: 16, height: 16})
+      .social-bar__count=comments
+

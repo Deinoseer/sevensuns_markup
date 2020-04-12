@@ -1,0 +1,16 @@
+mixin header
+  header.header(class=attributes.class, onclick!=attributes.onclick)
+    .header__wrapper
+      .header__main
+        .header__logo
+          a.header__logo-link(href="#")
+            +icon('icon-logo', {width: 104, height: 30}).icon_block
+        .header__menu
+          +menu()
+        .header__more
+          +drop-menu-action('icon-more', {
+            width: 24,
+            height: 24
+          }, actionMenu).drop_right_position.drop_anim_bottom
+        .header__user
+          +user-bar()

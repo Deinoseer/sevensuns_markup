@@ -1,0 +1,38 @@
+.stream-list {
+  margin-top: 68px;
+
+  &__heading {
+    margin-top: 38px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__filter {
+    display: flex;
+    align-items: center;
+
+    &-item + &-item {
+      margin-left: 5px;
+    }
+
+    .select2-dropdown {
+      min-width: 200px;
+    }
+  }
+
+  &__content {
+    display: block;
+    border-radius: 4px;
+    box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, .08);
+    background: $white;
+    padding: 45px 25px 25px 30px;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 32px;
+    }
+  }
+}

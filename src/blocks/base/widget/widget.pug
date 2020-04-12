@@ -1,0 +1,18 @@
+mixin widget(item)
+  .widget(class=attributes.class)
+    .widget__top
+      if item.icon
+        .widget__icon
+          +icon-title(item.sphere, item.icon, item.iconSize)
+      .widget__title=item.title
+      if item.text
+        .widget__text=item.text
+    .widget__bottom
+      if item.price
+        .widget__price=item.price
+      if item.buttonText
+        .widget__button
+          +button(item.buttonText).button_border-purple
+      if item.userImage && item.userName
+        .widget__user
+          +user(item.userImage, item.userName, item.userRating).user_sm

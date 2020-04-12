@@ -1,0 +1,13 @@
+mixin sphere-item(item)
+  .sphere-item(class=attributes.class).widget
+    .widget__top
+      if item.icon
+        .sphere-item__icon
+          +icon-title(item.sphere, item.icon, item.iconSize)
+      .sphere-item__title=item.title
+    .widget__bottom
+      .sphere-item__price=item.price
+      if item.button
+        .sphere-item__button
+          +button('Стать отвественным').button_border-purple
+

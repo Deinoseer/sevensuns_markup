@@ -1,0 +1,301 @@
+extends ../layouts/main
+
+block vars
+  - var title = 'Ui-kit';
+
+block content
+  block content
+    style.
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px 20px;
+      }
+
+      .row .col {
+        padding: 0 10px;
+      }
+    // main
+    main.page__main
+      // content
+      .page__content
+        h1 Заголовок 1
+        h2 Заголовок 2
+        h3 Заголовок 3
+        h4 Заголовок 4
+        h5 Заголовок 5
+        h2 Иконки
+        .row
+          each icon in __svgIcon
+            .col
+              +icon(icon.name, {width: 30, height: 30})
+        br
+        br
+        h2 Кнопки
+        .row
+          .col
+            +button('Добавить жалобу','icon-plus', {width: 24, height: 24}).button_red.button_lg
+          .col
+            +button('Оставить предложение','icon-plus', {width: 24, height: 24}).button_green.button_lg
+          .col
+            +button('Создать голосование','icon-plus', {width: 24, height: 24}).button_blue.button_lg
+          .col
+            +button('Предложить действие','icon-plus', {width: 24, height: 24}).button_purple.button_lg
+        .row
+          .col
+            +button('Кнопка').button_border-blue
+          .col
+            +button('Кнопка').button_border-white
+          .col
+            +button('Кнопка').button_border-purple
+          .col
+            +button('Кнопка', '', '', true).button_border
+        .row
+          .col
+            +button('Кнопка').button_purple.button_md
+          .col
+            +button('Кнопка', '', '', true).button_md
+        .row
+          .col
+            +button('', 'icon-arrow', {width: 60, height: 56}).button_round.button_white
+          .col
+            +button('', 'icon-arrow', {width: 60, height: 56}).button_round.button_dark-blue
+          .col
+            +button('', 'icon-arrow', {width: 60, height: 56}).button_round.button_flat
+        br
+        br
+        h2 Чекбокс
+        .row
+          .col
+            +checkbox('checkbox', '', false, false)
+          .col
+            +checkbox('checkbox', '', false, true)
+          .col
+            +checkbox('checkbox', '', true, false)
+          .col
+            +checkbox('checkbox', '', true, true)
+          .col
+            +checkbox('checkbox', 'текст для чекбокса', false, false)
+          .col
+            +checkbox-icon('checkbox', 'Культура', true, false, 'icon-culture', {width: 36, height: 24}).checkbox_icon
+        br
+        br
+        h2 Радио
+        .row
+          .col
+            +radio('radio', '', false, false)
+          .col
+            +radio('radio2', '', false, true)
+          .col
+            +radio('radio3', '', true, false)
+          .col
+            +radio('radio4', '', true, true)
+          .col
+            +radio('radio5', 'текст для радио', false, false)
+        br
+        br
+        h2 Ссылки
+        .row
+          .col
+            a(href='#').link Посмотреть все
+          .col
+            a(href='#').link.link_gray Посмотреть все
+        .row
+          .col
+            a(href='#').link.link_md Посмотреть все
+          .col
+            a(href='#').link.link_md.link_gray Посмотреть все
+        br
+        br
+        h2 Прогресс бар
+        .row
+          .col
+            +progress({
+              value: '95',
+              max: '112',
+              text: 'жалоб решено',
+              color: '#e34257'
+            })
+          .col
+            +progress({
+              value: '14',
+              max: '18',
+              text: 'предложений реализовано',
+              color: '#00b986'
+            })
+          .col
+            +progress({
+              value: '32',
+              max: '33',
+              text: 'голосований проведено',
+              color: '#2aa7df'
+            })
+          .col
+            +progress({
+              value: '12',
+              max: '13',
+              text: 'действий выполнено',
+              color: '#a318c9'
+            })
+        br
+        br
+        h2 Социальные элементы
+        .row
+          .col
+            +social-bar('84','13', '24')
+          .col
+            +rate('15')
+          .col
+            +chevron('Жалоба').chevron_red
+          .col
+            +chevron('Жалоба в работе').chevron_border
+          .col
+            +chevron('Предложение').chevron_green
+          .col
+            +chevron('Предложение закрыто').chevron_closed
+          .col
+            +chevron('Активисты')
+        br
+        br
+        h2 Пользователь
+        .row
+          .col
+            +user('img/user.png','Максим Пакровский', '327')
+          .col
+            +user('img/user.png','Макс', '27').user_inline
+          .col
+            +user('img/user.png','Саша В.', '103', true).user_inline
+        .row
+          .col
+            +user('img/user.png','Виктор Н.', '327').user_sm
+          .col(style="width:40%")
+            +user('img/user.png','Виктор Н.', false, false, 'Вкрутила лампочки во всём подъезде и тем самым исправил жалобу...').user_lg
+        br
+        br
+        h2 Заголовки с иконкой
+        .row
+          .col
+            +icon-title('Экология', 'icon-eco', {width: 36, height: 24})
+          .col
+            +icon-title('Медицина', 'icon-med', {width: 36, height: 24})
+          .col
+            +icon-title('Дети', 'icon-child', {width: 36, height: 24})
+          .col
+            +icon-title('Образование', 'icon-edu', {width: 36, height: 24})
+          .col
+            +icon-title('Животные', 'icon-pet', {width: 36, height: 24})
+          .col
+            +icon-title('Культура', 'icon-culture', {width: 36, height: 24})
+          .col
+            +icon-title('ЖКХ', 'icon-service', {width: 36, height: 24})
+          .col
+            +icon-title('Безопасность', 'icon-guard', {width: 36, height: 24})
+        br
+        br
+        h2 Другое
+        .row
+          .col
+            +event('12','Дек','12:30 - 14:40', 'Собрание собственников 3 подъезда')
+          .col
+            .widget
+              .widget__top Виджет
+              .widget__bottom
+                +button('Кнопка')
+          .col(style="width:352px")
+            +announce('Срочно требуется  повар', 'Максим С.', 'В доме № 35 (3 подъезд) открылось новое кафе "Ромашка". В кафе срочно требуется повар!')
+        .row
+          .col
+            +notify-item({
+              title: 'Назначена дата следующего собрания собственников. Не пропустите!',
+              date: '4 минуты назад'
+            })
+          .col(style="width:50%")
+            +stream-item({
+              sphereImage: 'icon-service',
+              sphereName: 'ЖКХ',
+              sphereImageSize: {width: 36, height: 24},
+              chevron: 'Жалбота в работе',
+              chevronClass: 'chevron_border',
+              text: 'В подъезде нужно мыть полы, а не придумывать отговорки и устраивать себе праздники каждый день! Взносы не забываете получать — будьте любезны и поработать. ',
+              date: 'Минуту назад'
+            })
+        br
+        br
+        h2 Новости
+        .row
+          .col
+            +news-item({
+              image: 'img/news/news-item.jpg',
+              title: 'Наш ЖК признали лучшим в России!',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              date: '2 июля 2019 в 18:40',
+              social: true,
+              chevron: 'Активисты'})
+          .col
+            +news-item({
+              image: false,
+              title: 'Наш ЖК признали лучшим в России!',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              background: '#2175bb',
+              button: 'Читать далее'
+            }).news-item_flat
+          .col
+            +news-item({
+              image: false,
+              title: 'Наш ЖК признали лучшим в России!',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              background: '#2aa7df',
+              button: 'Читать далее'
+            }).news-item_flat
+        .row
+          .col(style="width:55%")
+            +news-item({
+              image: 'img/news/news-item1.png',
+              title: 'Жители ЖК "Наш" соберутся во дворе для решения возникших вопросов.',
+              text: 'По результатам голосования жителей нашего дома ЖК "Наш" был признан лучшим сразу в четырех категориях... ',
+              date: 'Сегодня в 12:15',
+              social: true,
+              chevron: 'Управа района'
+            }).news-item_inline
+        br
+        br
+        h2 Виджеты
+        .row
+          .col(style="width:275px")
+            +sphere-item({
+              icon: 'icon-eco',
+              iconSize: {width: 36, height: 24},
+              sphere: 'Экология',
+              title: 'Требуется садовник для палисадника возле 3 подъезда 5 корпуса',
+              price: '15 000 руб/мес',
+              button: 'Стать отвественным'
+            })
+          .col(style="width:275px")
+            +sphere-item({
+              icon: 'icon-med',
+              iconSize: {width: 36, height: 24},
+              sphere: 'Медицина',
+              title: 'Медпункт ищет добровольцев для расклейки плакатов',
+              price: 'Без оплаты',
+              button: 'Стать отвественным'
+            })
+          .col(style="width:370px")
+            +service-item({
+              title: 'Ремонт холодильников',
+              text: 'Отремонтирую любой холодильник за 30 минут, звоните!',
+              userImage: 'img/user.png',
+              userName: 'Виктор Н.',
+              userRating: '103'
+            })
+        br
+        br
+        h2 Команда
+        .row
+          .col
+            +team-item({
+              image: 'img/user.png',
+              title: 'Маргарита С.',
+              text: 'Вкрутила лампочки во всём подъезде и тем самым исправил жалобу...',
+              button: 'Узнать подробнее'
+            })
+

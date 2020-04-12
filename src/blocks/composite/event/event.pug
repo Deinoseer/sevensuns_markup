@@ -1,0 +1,8 @@
+mixin event(date, month, clock, text)
+  a.event(class=attributes.class)
+    .event__date
+      .event__day=date
+      .event__month=month
+    .event__content
+      .event__clock=clock
+      .event__text=text

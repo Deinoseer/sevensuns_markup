@@ -1,0 +1,39 @@
+.social-bar {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity $timing;
+
+    & + & {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+
+  &__icon {
+    margin-right: 4px;
+    margin-top: 4px;
+    flex-shrink: 0;
+
+    &-dislike {
+      margin-top: 0;
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__count {
+    font-size: 14px;
+    color: $grayDark;
+    font-weight: 500;
+  }
+}

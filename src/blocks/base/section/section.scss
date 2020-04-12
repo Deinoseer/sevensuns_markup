@@ -1,0 +1,309 @@
+.section {
+  display: block;
+
+  &__wrapper {
+    min-width: 0;
+    max-width: 1140px;
+    margin: auto;
+  }
+
+  &__row {
+    display: flex;
+    align-items: stretch;
+
+    & + & {
+      margin-top: 32px;
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_activity {
+    display: block;
+    background: $white url('../img/backgrounds/bg-active.png') 0 0;
+    background-size: 50%;
+    padding-top: 68px;
+    padding-bottom: 70px;
+  }
+
+  &_activity & {
+    &__head {
+      margin-bottom: 40px;
+    }
+
+    &__wrapper {
+      padding: 0 15px;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: -24px;
+    }
+  }
+
+  &_announce {
+    display: block;
+    padding-bottom: 25px;
+  }
+
+  &_announce & {
+    &__head {
+      margin-bottom: 32px;
+    }
+
+    &__wrapper {
+      padding: 0 15px;
+    }
+
+    &__content {
+      margin: 0 -15px;
+      padding: 0 15px 5px;
+      overflow: hidden;
+    }
+
+    &__list {
+      display: flex;
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    &__item {
+      width: 33.33%;
+      padding-bottom: 20px;
+    }
+  }
+
+  &_graph {
+    position: relative;
+    display: block;
+    padding-top: 25px;
+    padding-bottom: 83px;
+
+    .section__item + .section__item {
+      margin-left: 30px;
+    }
+  }
+
+  &_graph & {
+    &__wrapper {
+      padding: 0 15px;
+    }
+
+    &__item {
+      width: 50%;
+    }
+
+    &__bird {
+      position: absolute;
+      bottom: -5px;
+      right: 10px;
+    }
+  }
+
+  &_main {
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 63px;
+    background: url("../img/backgrounds/bg-logo.png") no-repeat left 31%;
+    background-size: 264px 584px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 187px;
+      display: block;
+      width: 485px;
+      height: 367px;
+      border-radius: 40px;
+      box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, .08);
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5));
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 40px;
+      z-index: -1;
+      display: block;
+      width: 1351px;
+      height: 125px;
+      background: url("../img/backgrounds/bg-logo-i.png") no-repeat left center;
+      background-size: contain;
+    }
+
+    .section__wrapper {
+      display: flex;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  &_main & {
+    &__content {
+      display: block;
+      flex: 1;
+    }
+
+    &__aside {
+      margin-left: 30px;
+      width: 351px;
+      flex-shrink: 0;
+    }
+  }
+
+  &_news {
+    display: block;
+    padding-top: 62px;
+    padding-bottom: 70px;
+    background: $white;
+  }
+
+  &_news & {
+    &__head {
+      margin-bottom: 24px;
+    }
+
+    &__wrapper {
+      padding: 0 15px;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
+    }
+
+    &__item {
+      margin: 15px;
+    }
+  }
+
+  &_service {
+    display: block;
+    padding-top: 68px;
+    padding-bottom: 25px;
+  }
+
+  &_service & {
+    &__head {
+      margin-bottom: 35px;
+    }
+
+    &__wrapper {
+      padding: 0 15px;
+    }
+
+    &__content {
+      overflow: hidden;
+      padding-left: 30px;
+      margin-left: -30px;
+      padding-bottom: 5px;
+    }
+
+    &__list {
+      display: flex;
+      overflow: visible;
+    }
+
+    &__item {
+      width: 33.33%;
+      padding-bottom: 20px;
+    }
+  }
+
+  &_sphere {
+    background: $blueBack url("../img/backgrounds/bird.png") no-repeat left bottom;
+    background-size: 172px 369px;
+    min-height: 539px;
+    padding-top: 68px;
+  }
+
+  &_sphere & {
+    &__head {
+      display: block;
+      margin-bottom: 44px;
+    }
+
+    &__wrapper {
+      padding: 0 15px;
+    }
+
+    &__title {
+      color: $white;
+      text-align: center;
+    }
+
+    &__list {
+      display: flex;
+    }
+
+    &__item {
+      width: 25%;
+      padding-bottom: 20px;
+    }
+
+    &__more {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 16px;
+    }
+  }
+
+  &_team {
+    display: block;
+    min-height: 628px;
+    text-align: center;
+    padding: 58px 0 0;
+    background: $blueBack url("../img/backgrounds/houses.png") no-repeat center bottom;
+    background-size: 1297px 399px;
+  }
+
+  &_team & {
+    &__head {
+      margin-bottom: 38px;
+      flex-direction: column;
+    }
+
+    &__title {
+      color: $white;
+      margin-bottom: 16px;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+      line-height: 30px;
+      color: $black;
+    }
+
+    &__slider {
+      width: 1903px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &__content {
+      position: relative;
+      text-align: left;
+      margin-bottom: 46px;
+      width: 100%;
+      overflow: hidden;
+      height: 396px;
+    }
+
+    &__list {
+      .slider-nav {
+        margin-top: 46px;
+      }
+    }
+  }
+}

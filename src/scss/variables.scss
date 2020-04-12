@@ -1,0 +1,36 @@
+//mediaqueries
+//$laptop: "(min-width: 1400px)";
+//$desktop: "(min-width: 1600px)";
+//$desktopLarge: "(min-width: 1900px)";
+
+//colors
+$background: #f8fafc;
+$baseColor: #6f7379;
+$white: #fff;
+$black: #2c3539;
+$green: #00b986;
+$red: #e34257;
+$blue: #2aa7df;
+$blueDark: #2175bb;
+$blueBack: #4ac6ff;
+$yellow: #fef7b7;
+$purple: #ae1db9;
+$gray: #f8fafc;
+$grayLight: #c6cacf;
+$grayMid: #ecedef;
+$grayDark: #8b9398;
+$footerColor: #2c3539;
+
+$colorDisabled: #ccc;
+$colorControl: #111;
+$colorControlHover: #222;
+
+// timing
+$timing: .3s;
+
+//fonts
+$fontLora: 'Lora', sans-serif;
+$fontTTNorms: 'TTNorms', sans-serif;
+
+$fontSize: 15px;
+$fontLineHeight: 20px;

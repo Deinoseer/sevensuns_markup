@@ -1,0 +1,186 @@
+.drop {
+  position: relative;
+  z-index: 10;
+  transition: z-index 0s $timing*2;
+
+  &__toggle {
+    cursor: pointer;
+    fill: $grayDark;
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $timing;
+  }
+
+  &_top & {
+    &__tooltip {
+      bottom: calc(100% + 8px);
+    }
+  }
+
+  &_bottom & {
+    &__tooltip {
+      top: calc(100% + 8px);
+    }
+  }
+
+  &_anim_top & {
+    &__tooltip {
+      top: auto;
+      bottom: calc(100% + 18px);
+    }
+  }
+
+  &_anim_bottom & {
+    &__tooltip {
+      top: calc(100% + 18px);
+    }
+  }
+
+  &_anim_bottom &,
+  &_anim_top & {
+    &__tooltip {
+      transition: opacity $timing $timing/2, top $timing $timing/2, bottom $timing $timing/2, visibility 0s $timing*1.3;
+    }
+  }
+
+  &_user & {
+    &__toggle {
+      &::after {
+        content: '';
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        margin-top: -1px;
+        border-top: 4px solid $white;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        transition: transform $timing;
+      }
+    }
+  }
+
+  &_center & {
+    &__tooltip {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &__corner {
+      left: 50%;
+      margin-left: -3px;
+    }
+  }
+
+  &_right_position & {
+    &__tooltip {
+      right: 50%;
+      transform: translateX(29px);
+      width: 200px;
+    }
+
+    &__corner {
+      left: auto;
+      right: 24px;
+    }
+  }
+
+  &_left_position & {
+    &__tooltip {
+      left: 50%;
+      transform: translateX(-29px);
+      width: 250px;
+    }
+
+    &__corner {
+      left: 24px;
+    }
+  }
+
+  // hover and active
+  &_hover,
+  &_open & {
+    &__toggle {
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &__tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &_open.drop_scoreboard & {
+    &__toggle {
+      &::after {
+        top: 2px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  &_open.drop_post_time & {
+    &__toggle {
+      &::after {
+        top: 0;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  &_open,
+  &_hover:hover {
+    transition: z-index 0s 0s;
+  }
+
+  &_open {
+    z-index: 11;
+  }
+
+  &_hover:hover {
+    z-index: 12;
+  }
+
+  &_open &,
+  &_hover:hover & {
+    &__tooltip {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity $timing $timing/2, top $timing $timing/2, bottom $timing $timing/2, visibility 0s 0s;
+    }
+  }
+
+  &_anim_bottom.drop_open &,
+  &_anim_bottom.drop_hover:hover & {
+    &__tooltip {
+      top: calc(100% + 8px);
+    }
+  }
+
+  &_anim_top.drop_open &,
+  &_anim_top.drop_hover:hover & {
+    &__tooltip {
+      bottom: calc(100% + 8px);
+    }
+  }
+
+  &_open &,
+  &:hover & {
+    &__toggle {
+      fill: $grayDark;
+    }
+  }
+}

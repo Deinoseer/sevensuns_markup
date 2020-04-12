@@ -1,0 +1,31 @@
+.sphere-item {
+  display: block;
+  border-radius: 8px;
+
+  &__icon {
+    margin-left: -10px;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: $black;
+  }
+
+  &__price {
+    font-size: 14px;
+    color: $grayDark;
+  }
+
+  &__button {
+    position: relative;
+    z-index: 0;
+    margin-top: 12px;
+    margin-bottom: 10px;
+
+    .button {
+      margin: 0 auto;
+    }
+  }
+}

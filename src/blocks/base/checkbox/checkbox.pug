@@ -1,0 +1,20 @@
+mixin checkbox(name, text, checked, disabled)
+  label.checkbox(class=attributes.class)
+    input.checkbox__input(type="checkbox", name=name, checked=checked, disabled=disabled)
+    span.checkbox__button
+      +icon('icon-check', {width: 11, height: 11}).icon_block
+    if text
+      span.checkbox__text.text=text
+
+
+mixin checkbox-icon(name, text, checked, disabled, icon, iconSize)
+  label.checkbox(class=attributes.class)
+    input.checkbox__input(type="checkbox", name=name, checked=checked, disabled=disabled)
+    span.checkbox__content
+      span.checkbox__button
+        +icon('icon-check', {width: 11, height: 11}).icon_block
+      if icon
+        span.checkbox__icon
+          +icon(icon, iconSize)
+      if text
+        span.checkbox__text.text=text

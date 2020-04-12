@@ -1,0 +1,12 @@
+mixin slider-nav(type)
+  .slider-nav(class=attributes.class)
+    if (type === 'flat') || (type === 'announce')
+      .slider-nav__item
+        +button('', 'icon-arrow', {width: 60, height: 56}).button_round.button_flat.slider-nav__item-prev.js-slider-prev
+      .slider-nav__item
+        +button('', 'icon-arrow', {width: 60, height: 56}).button_round.button_flat.slider-nav__item-next.js-slider-next
+    else
+      .slider-nav__item
+        +button('', 'icon-arrow', {width: 60, height: 56}).button_round.button_white.slider-nav__item-prev.js-slider-prev
+      .slider-nav__item
+        +button('', 'icon-arrow', {width: 60, height: 56}).button_round.button_white.slider-nav__item-next.js-slider-next

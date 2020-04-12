@@ -1,0 +1,139 @@
+.page {
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+    max-width: 1140px;
+    margin: auto;
+
+    &-columns {
+      display: flex;
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    &-wrap {
+      display: flex;
+    }
+
+    &-title {
+      margin: 0 14px 0 0;
+    }
+  }
+
+  &__block {
+    background-color: $white;
+    border-radius: 4px;
+    margin-bottom: 16px;
+
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+      padding: 0 24px;
+      border-bottom: 1px solid $gray;
+
+      &_flat {
+        padding: 20px 24px 0;
+        height: 40px;
+        border-bottom: none;
+      }
+
+      &_search {
+        display: block;
+        padding: 24px 24px 16px;
+        height: auto;
+      }
+    }
+
+    &-title {
+      margin: 0;
+    }
+
+    &-footer {
+      padding: 16px 24px;
+      border-top: 1px solid $gray;
+
+      &_justify {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &-wrapper {
+      padding: 20px 24px;
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+    }
+
+    &-title + & {
+      &-count {
+        margin: 0 32px 0 6px;
+      }
+    }
+
+    &-nav {
+      display: flex;
+      align-items: center;
+      margin-left: 24px;
+    }
+
+    &_top {
+      border-radius: 4px 4px 0 0;
+      margin: 0;
+    }
+
+    &_bottom {
+      border-radius: 0 0 4px 4px;
+    }
+  }
+
+  &__error {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 82px);
+    min-height: 600px;
+    //background: url("../img/404/bg-404.png") no-repeat right bottom;
+    &-wrapper {
+      width: 50%;
+      align-self: center;
+    }
+
+    &-code {
+      font-size: 180px;
+      font-weight: 900;
+      line-height: 1;
+      color: $green;
+    }
+
+    &-title {
+      font-size: 43px;
+      line-height: 1;
+      font-weight: bold;
+      margin-top: 12px;
+      margin-bottom: 26px;
+    }
+
+    &-text {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  &_overflow-hidden {
+    overflow: hidden;
+    min-height: auto;
+  }
+}

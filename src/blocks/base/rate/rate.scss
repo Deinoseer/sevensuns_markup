@@ -1,0 +1,26 @@
+.rate {
+  background: $yellow;
+  border-radius: 5px;
+  display: flex;
+  height: 24px;
+  padding-right: 6px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &__icon {
+    margin-right: 6px;
+    padding-top: 3px;
+    fill: $black;
+  }
+
+  &__count {
+    font-size: 14px;
+    font-weight: 500;
+    color: $black;
+  }
+}

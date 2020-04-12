@@ -1,0 +1,21 @@
+mixin goal(item)
+  .goal(class=attributes.class, style="background-image:url(" + item.background +")")
+    .goal__content
+      .goal__title.title.title_h2=item.title
+      .goal__text=item.text
+      .goal__button
+        +button(item.button,'icon-plus', {width: 24, height: 24})(class=item.buttonClass).button_lg
+    .goal__chart
+      .goal__more
+        +drop-menu-action('icon-drag', {
+          width: 24,
+          height: 24
+        }, actionMenu).drop_right_position.drop_anim_bottom
+
+      +progress({
+        value: item.progress.value,
+        max: item.progress.max,
+        text: item.progress.text,
+        color: item.progress.color,
+        gradient: item.progress.gradient
+      })

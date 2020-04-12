@@ -1,0 +1,167 @@
+.checkbox {
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+
+  &__button,
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  &__input {
+    opacity: 0;
+  }
+
+  &__button {
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    transition: background-color $timing, border-color $timing;
+    background: $grayMid;
+    fill: $white;
+
+    &:hover {
+      opacity: .9;
+    }
+
+    &::before {
+      background-color: $grayMid;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      transition: left $timing;
+    }
+
+    .icon {
+      width: 0;
+      overflow: hidden;
+      top: 5px;
+      left: 4px;
+      position: absolute;
+      transition: width $timing;
+    }
+  }
+
+  &__input:checked + & {
+    &__button {
+      background-color: $black;
+      border-color: $black;
+
+      &:hover {
+        opacity: .9;
+      }
+
+      &::before {
+        left: 11px;
+      }
+
+      .icon {
+        width: 15px;
+      }
+    }
+
+    &__content {
+      background: $grayMid;
+
+      .checkbox__button {
+        background-color: $black;
+        border-color: $black;
+
+        &::before {
+          left: 11px;
+        }
+
+        .icon {
+          width: 15px;
+        }
+      }
+
+      .checkbox__text {
+        color: $black;
+      }
+
+      .checkbox__icon {
+        fill: $black;
+      }
+    }
+  }
+
+  &__input:disabled + & {
+    &__button {
+      background-color: rgba($colorDisabled, .3);
+      border-color: $colorDisabled;
+      cursor: default;
+    }
+  }
+
+  &__input:checked:disabled + & {
+    &__button {
+      background-color: $colorDisabled;
+      border-color: $colorDisabled;
+    }
+  }
+
+  &__text {
+    padding-left: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $black;
+  }
+
+  &__icon {
+    fill: $grayDark;
+  }
+
+  &_icon {
+    margin: 0;
+    padding: 0 15px 0 0;
+    display: flex;
+    width: 100%;
+
+    & + & {
+      margin-top: 5px;
+    }
+
+  }
+
+  &_icon & {
+    &__input,
+    &__button {
+      top: 50%;
+      left: 8px;
+      transform: translateY(-50%);
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: all $timing;
+      width: 100%;
+
+      &:hover {
+        background: $gray;
+      }
+    }
+
+    &__icon {
+      position: relative;
+      top: 2px;
+      padding-left: 30px;
+    }
+
+    &__text {
+      padding-left: 0;
+      line-height: 15px;
+      color: $grayDark;
+    }
+  }
+}

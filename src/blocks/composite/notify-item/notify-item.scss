@@ -1,0 +1,17 @@
+.notify-item {
+  &__title {
+    text-decoration: none;
+    color: $baseColor;
+    transition: opacity $timing;
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+
+  &__date {
+    margin-top: 2px;
+    font-size: 14px;
+    color: $grayDark;
+  }
+}

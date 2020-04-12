@@ -1,0 +1,9 @@
+mixin service-item(item)
+  .service-item(class=attributes.class).widget
+    .widget__top
+      .service-item__title=item.title
+      .service-item__text=item.text
+    .widget__bottom
+      .service-item__user
+        +user(item.userImage, item.userName, item.userRating).user_sm
+

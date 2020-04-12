@@ -1,0 +1,35 @@
+.stream-item {
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    &-item {
+      .icon {
+        fill: $grayLight;
+      }
+
+      &_end {
+        margin-left: auto;
+      }
+    }
+
+    &-item + &-item {
+      margin-left: 24px;
+    }
+  }
+
+  &__body {
+    display: flex;
+  }
+
+  &__content {
+    flex: 1;
+    padding-right: 68px;
+  }
+
+  &__date {
+    color: $grayLight;
+    font-size: 14px;
+  }
+}

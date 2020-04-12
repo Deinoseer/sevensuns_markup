@@ -1,0 +1,10 @@
+/node_modules
+/dist
+/src/common
+/src/scss/normalize.scss
+/src/img
+/src/fonts
+
+*.pug
+*.json
+*.js

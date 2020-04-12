@@ -1,0 +1,12 @@
+mixin user-bar()
+  .user-bar(class=attributes.class)
+    .user-bar__menu
+      a.user-bar__menu-item(href="#")
+        +icon('icon-search', {width: 24, height:24})
+      a.user-bar__menu-item(href="#")
+        +icon('icon-activity', {width: 24, height: 24})
+      a.user-bar__menu-item(href="#")
+        +icon('icon-mail', {width: 28, height: 25})
+        .user-bar__count 12
+    a.user-bar__photo(href="#")
+      img(src="img/user.png")

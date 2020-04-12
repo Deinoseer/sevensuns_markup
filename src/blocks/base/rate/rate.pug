@@ -1,0 +1,5 @@
+mixin rate(count)
+  .rate(class=attributes.class)
+    .rate__icon
+      +icon('icon-rate', {width: 24, height: 24})
+    .rate__count=count

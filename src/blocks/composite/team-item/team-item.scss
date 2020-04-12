@@ -1,0 +1,49 @@
+.team-item {
+  position: relative;
+  transition: all $timing;
+  transform: scale(.8);
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(74, 198, 255, .85);
+    transition: all $timing;
+    z-index: 1;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 30px 40px -20px rgba(14, 94, 130, .3);
+    background: $white;
+    height: 100%;
+    min-height: 280px;
+    margin: 0 auto;
+    padding: 30px 53px;
+    max-width: 590px;
+  }
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &.swiper-slide-active {
+    transform: scale(1);
+    width: 590px !important;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  &.swiper-slide-prev,
+  &.swiper-slide-next {
+    top: -16px;
+  }
+}

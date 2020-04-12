@@ -1,0 +1,17 @@
+.slider-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    & + & {
+      margin-left: 15px;
+    }
+
+    &-next {
+      .icon {
+        transform: scale(-1);
+      }
+    }
+  }
+}

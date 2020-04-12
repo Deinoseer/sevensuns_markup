@@ -1,0 +1,25 @@
+.icon-title {
+  display: flex;
+  align-items: center;
+
+  &__pic {
+    margin-top: 4px;
+    flex-shrink: 0;
+
+    .icon {
+      fill: $grayMid;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    color: $grayDark;
+  }
+
+  &_white & {
+    &__text {
+      color: $white;
+    }
+  }
+}

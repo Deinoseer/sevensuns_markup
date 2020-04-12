@@ -1,0 +1,86 @@
+.radio {
+  position: relative;
+  padding-left: 20px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 13px;
+  line-height: 20px;
+
+  &__button,
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  &__input {
+    opacity: 0;
+  }
+
+  &__button {
+    border: 2px solid $colorControl;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: background-color $timing, border-color $timing;
+
+    &:hover {
+      border-color: $colorControlHover;
+    }
+
+    &::before {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-color: $green;
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(0, 0);
+      transition: transform $timing, opacity $timing, background-color $timing;
+    }
+  }
+
+  &__input:checked + & {
+    &__button {
+      border-color: $green;
+
+      &::before {
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+
+      &:hover {
+        border-color: $gray;
+
+        &::before {
+          background-color: $gray;
+        }
+      }
+    }
+  }
+
+  &__input:disabled + & {
+    &__button {
+      border-color: $colorDisabled;
+      cursor: default;
+    }
+  }
+
+  &__input:checked:disabled + & {
+    &__button {
+      border-color: $colorDisabled;
+
+      &::before {
+        background-color: $colorDisabled;
+      }
+    }
+  }
+
+  &__text {
+    padding-left: 8px;
+  }
+}

@@ -1,0 +1,21 @@
+mixin user(image, name, rating, activity, text)
+  .user(class=attributes.class)
+    .user__image
+      img(src=image)
+    .user__content
+      .user__heading
+        .user__name=name
+        if rating
+          .user__rating
+            +rate(rating)
+      if activity
+        .user__activity
+          .user__activity-item
+            .user__activity-date 12 мая 2019
+            .user__activity-text — Замена лампочки в подъезде
+          .user__activity-item
+            .user__activity-date 05 июня
+            .user__activity-text — Организация голосования
+      if text
+        .user__text=text
+        +button('Узнать подробнее').button_border-blue

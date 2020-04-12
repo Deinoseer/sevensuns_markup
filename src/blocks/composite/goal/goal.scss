@@ -1,0 +1,41 @@
+.goal {
+  display: flex;
+  background-color: $white;
+  background-repeat: no-repeat;
+  background-position: 105% 150%;
+  background-size: 187px 210px;
+  border-radius: 4px;
+  box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, .08);
+  min-height: 310px;
+
+  &__title {
+    min-height: 80px;
+    margin-bottom: 15px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 33px 25px 28px 35px;
+  }
+
+  &__button {
+    margin-top: auto;
+    padding-top: 24px;
+  }
+
+  &__chart {
+    position: relative;
+    flex-shrink: 0;
+    padding-top: 28px;
+    padding-right: 28px;
+  }
+
+  &__more {
+    position: absolute;
+    right: 0;
+    top: 13px;
+    cursor: pointer;
+  }
+}

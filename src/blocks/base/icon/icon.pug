@@ -1,0 +1,8 @@
+mixin icon(iconName, options)
+  -
+    const width = options && options.width || "";
+    const height = options && options.height || "";
+
+  span.icon(class=attributes.class)
+    svg(width=width ? width : '100%', height=height ? height : '100%')
+      use(xlink:href=`#${iconName}`)

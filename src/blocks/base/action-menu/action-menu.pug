@@ -1,0 +1,5 @@
+mixin action-menu(data)
+  menu.action-menu(class=attributes.class)
+    each item in data
+      a.action-menu__item(href="#")
+        .action-menu__item-text=item.title

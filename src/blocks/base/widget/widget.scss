@@ -1,0 +1,173 @@
+.widget {
+  background: $white;
+  box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, .08);
+  border-radius: 4px;
+  padding: 14px 30px;
+
+  &__top {
+    display: block;
+    padding-bottom: 12px;
+
+    + .widget__bottom {
+      border-top: 2px solid $grayMid;
+    }
+  }
+
+  &__user + &__list {
+    margin-top: 24px;
+  }
+
+  &__list {
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      white-space: nowrap;
+
+      & + & {
+        margin-top: 5px;
+      }
+
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 8px;
+      }
+
+      strong {
+        font-weight: 500;
+        color: $black;
+      }
+    }
+  }
+
+  &__bottom {
+    display: block;
+    padding-top: 8px;
+  }
+
+  &_events {
+    margin-top: 30px;
+    padding: 25px 24px 45px;
+  }
+
+  &_events & {
+    &__top {
+      display: flex;
+      align-items: center;
+      padding-bottom: 18px;
+      margin-right: -4px;
+
+      + .widget__bottom {
+        border-top: 2px solid $grayMid;
+      }
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: 500;
+      color: $black;
+      margin-right: 10px;
+    }
+
+    &__button {
+      margin-left: 5px;
+    }
+
+    &__bottom {
+      padding-top: 34px;
+    }
+  }
+
+  &_user {
+    padding: 40px 30px;
+
+    .user__content {
+      padding-top: 12px;
+    }
+  }
+
+  &_user & {
+    &__top {
+      padding-bottom: 26px;
+      padding-left: 7px;
+
+      + .widget__bottom {
+        border-top: 1px solid $grayMid;
+      }
+    }
+
+    &__list {
+      margin-left: -7px;
+    }
+
+    &__bottom {
+      padding-top: 24px;
+    }
+  }
+
+  &_sphere {
+    display: block;
+    border-radius: 8px;
+  }
+
+  &_sphere & {
+    &__icon {
+      margin-left: -10px;
+      margin-bottom: 8px;
+    }
+
+    &__title {
+      font-size: 16px;
+      font-weight: 500;
+      color: $black;
+    }
+
+    &__text {
+      font-size: 16px;
+      font-weight: 500;
+      color: $black;
+    }
+
+    &__price {
+      font-size: 14px;
+      color: $grayDark;
+    }
+
+    &__button {
+      position: relative;
+      z-index: 0;
+      margin-top: 12px;
+      margin-bottom: 10px;
+
+      .button {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &_service {
+    padding: 22px 30px 18px;
+    box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, .08);
+  }
+
+  &_service & {
+    &__title {
+      color: $black;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    &__text {
+      font-size: 18px;
+      color: $grayDark;
+      margin-bottom: 24px;
+    }
+
+    &__user {
+      margin-top: 8px;
+    }
+  }
+}

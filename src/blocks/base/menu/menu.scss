@@ -1,0 +1,33 @@
+.menu {
+  position: relative;
+  overflow: hidden;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    color: $black;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 2px 12px;
+    border-radius: 12px;
+    background: transparent;
+    transition: all $timing;
+
+    &:hover {
+      color: $grayDark;
+    }
+
+    & + & {
+      margin-left: 9px;
+    }
+
+    &_current {
+      background: $grayMid;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.text {
+  &_xs-small {
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  &_md-small {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &_small {
+    font-size: 13px;
+  }
+
+  &_normal {
+    font-weight: 400;
+  }
+
+  &_center {
+    text-align: center;
+  }
+
+  &_uppercase {
+    text-transform: uppercase;
+  }
+}

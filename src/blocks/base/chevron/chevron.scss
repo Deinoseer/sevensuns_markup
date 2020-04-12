@@ -1,0 +1,31 @@
+.chevron {
+  display: inline-block;
+  color: $white;
+  font-size: 13px;
+  line-height: 18px;
+  border-radius: 4px;
+  background: $blue;
+  padding: 0 5px;
+  border: 1px solid $blue;
+
+  &_red {
+    background: $red;
+    border-color: $red;
+  }
+
+  &_green {
+    background: $green;
+    border-color: $green;
+  }
+
+  &_border {
+    background: transparent;
+    border-color: $red;
+    color: $red;
+  }
+
+  &_closed {
+    background: $grayMid;
+    border-color: $grayMid;
+  }
+}

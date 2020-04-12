@@ -1,0 +1,20 @@
+mixin news-item(item)
+  if !item.background ? item.background = '#fff': ''
+  .news-item(class=attributes.class, style='background-color: '+ item.background +'')
+    if item.image
+      .news-item__image(style='background-image:url(' + item.image  +'')
+        if item.chevron
+          .news-item__chevron
+            +chevron(item.chevron)
+    .news-item__content
+      if item.date
+        .news-item__date=item.date
+      a.news-item__title(href="#")=item.title
+      .news-item__text=item.text
+      if item.button
+        .news-item__button
+          +button(item.button).button_border-white
+      if item.social
+        .news-item__social
+          +social-bar('41','2','13')
+

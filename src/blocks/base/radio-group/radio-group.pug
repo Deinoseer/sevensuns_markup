@@ -1,0 +1,6 @@
+mixin radio-group(options)
+  .radio-group(class=attributes.class)
+    each option in options
+      label.radio-group__label
+        input.radio-group__radio(type="radio", name=option.name, value=option.value, checked=option.checked, class=option.class)
+        span.radio-group__button=option.text

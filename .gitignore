@@ -1,0 +1,9 @@
+node_modules
+package-lock.json
+
+# Editors
+.vscode
+.idea
+
+# Component generated
+dist

@@ -1,0 +1,43 @@
+.event {
+  display: flex;
+  align-items: flex-start;
+
+  & + & {
+    margin-top: 15px;
+  }
+
+  &__date {
+    background: $gray;
+    text-align: center;
+    padding: 14px 0 17px;
+    min-width: 61px;
+    margin-right: 14px;
+  }
+
+  &__content {
+    margin-top: 10px;
+  }
+
+  &__day {
+    color: $blue;
+    font-size: 30px;
+    margin-bottom: 4px;
+  }
+
+  &__month {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: $baseColor;
+    letter-spacing: 1px;
+  }
+
+  &__clock {
+    font-size: 15px;
+    font-weight: 500;
+    color: $black;
+  }
+
+  &__text {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,5 @@
+mixin team-item(item)
+  .team-item(class=attributes.class)
+    .team-item__content
+      +user(item.image, item.title, false, false, item.text).user_lg
+

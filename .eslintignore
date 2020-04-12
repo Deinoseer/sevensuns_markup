@@ -1,0 +1,6 @@
+node_modules
+src/favicon/
+src/utils
+src/js
+src/**/**/**/data.js
+webpack.config.js
